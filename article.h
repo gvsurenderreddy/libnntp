@@ -15,15 +15,17 @@
   * along with libnntp. If not, see <http://www.gnu.org/licenses/>.
   */
 
-#define ARTICLE_H 1
 #ifndef ARTICLE_H
+#define ARTICLE_H 1
 
-#include "decoded_article.h"
 #include <boost/intrusive_ptr.hpp>
 #include "intrusive_ptr.h"
 
 namespace nntp
 {
+    // forward declarations
+    class decoded_article;
+
     // typedefs
     typedef std::map<std::string, std::string>      header_list;
     typedef boost::intrusive_ptr<decoded_article>   decoded_article_ptr;
@@ -47,7 +49,7 @@ namespace nntp
             char                    *content;           // pointer to body contents
             int                     length;             // length of content
             decoded_article_ptr     decoded;            // pointer to decoded article
-            size_t                  references;         // reference count to this object
+            std::size_t             references;         // reference count to this object
 
             friend void ::boost::intrusive_ptr_add_ref<>(article *p);
             friend void ::boost::intrusive_ptr_release<>(article *p);
@@ -114,4 +116,5 @@ namespace nntp
     };
 }
 
+#include "decoded_article.h"
 #endif /* ARTICLE_H */

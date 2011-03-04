@@ -18,6 +18,7 @@
 #include "nntp.h"
 #include "group.h"
 #include "article.h"
+#include "decoded_article.h"
 #include "exceptions.h"
 
 namespace nntp

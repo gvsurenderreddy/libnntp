@@ -64,7 +64,7 @@ namespace nntp
             slice_out   =   0;
 
             // set the time for the next iteration
-            slice_time  +=  boost::posix_time::millisec(1000000);
+            slice_time  +=  boost::posix_time::millisec(100);
         }
     }
 
@@ -131,7 +131,7 @@ namespace nntp
                 outgoing.push(0);
 
                 // store the current time + a tenth of a second
-                slice_time  =   boost::posix_time::microsec_clock::universal_time() + boost::posix_time::millisec(1000000);
+                slice_time  =   boost::posix_time::microsec_clock::universal_time() + boost::posix_time::millisec(100);
 
                 // all done
                 return true;
@@ -320,7 +320,7 @@ namespace nntp
         update_slices();
 
         // and calculate the speed
-        return inc_bytes / incoming.size();
+        return inc_bytes * 10 / incoming.size();
     }
 
     // get outgoing bytes per second
@@ -330,6 +330,6 @@ namespace nntp
         update_slices();
 
         // and calculate the speed
-        return out_bytes / outgoing.size();
+        return out_bytes * 10 / outgoing.size();
     }
 }

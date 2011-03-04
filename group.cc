@@ -16,6 +16,7 @@
   */
 
 #include "group.h"
+#include "article.h"
 
 namespace nntp
 {

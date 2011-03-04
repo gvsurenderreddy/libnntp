@@ -27,8 +27,6 @@ namespace nntp
 {
     // forward declarations
     class group;
-    class article;
-    class decoded_article;
 
     // typedefs
     typedef boost::intrusive_ptr<group>    group_ptr;

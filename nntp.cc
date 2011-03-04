@@ -20,6 +20,7 @@
 #include <boost/asio.hpp>
 
 #include "nntp.h"
+#include "group.h"
 
 namespace nntp
 {
