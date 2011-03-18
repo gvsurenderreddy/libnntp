@@ -77,8 +77,8 @@ namespace nntp
     // fetch an article based on it's message id
     article_ptr group::fetch_article(const std::string& msg_id)
     {
-        char    command[64];    // command to send to the server
-        char    id[64];         // message id
+        char    command[128];   // command to send to the server
+        char    id[128];        // message id
         char    response[512];  // response from usenet server
         long    number;         // message number in group
 
