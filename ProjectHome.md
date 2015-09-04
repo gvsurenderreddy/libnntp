@@ -1,0 +1,1 @@
+libnntp is a library enabling easy development of usenet readers. It includes a yenc decoder, allowing processing of (multipart) binaries.
